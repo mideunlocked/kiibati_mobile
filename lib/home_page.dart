@@ -1,13 +1,8 @@
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:kiibati_mobile/screens/empty_screen.dart';
 import 'package:kiibati_mobile/screens/kiibati_online_screen.dart';
 
-import 'widgets/app_drawer.dart';
-import 'widgets/announcement_banner.dart';
-import 'widgets/home_today.dart';
+import 'screens/Home_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 2,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.of(context).pushNamed('EmptyScreen'),
             icon: const Icon(
               Icons.account_circle_rounded,
               color: Colors.black,
@@ -65,75 +60,6 @@ class _HomePageState extends State<HomePage> {
             label: 'Settings',
           ),
         ],
-      ),
-      drawer: const AppDrawer(),
-    );
-  }
-}
-
-class HomePageScreen extends StatelessWidget {
-  static const routeName = "HomePageScreen";
-
-  const HomePageScreen({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            ListTile(
-              title: AutoSizeText(
-                'Announcments',
-                style: GoogleFonts.openSans(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              subtitle: const Text(
-                'Find out all about recent announcements and upcoming events',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const AnnouncementBanner(),
-            const SizedBox(
-              height: 20,
-            ),
-            ListTile(
-              title: AutoSizeText(
-                'Church Today',
-                style: GoogleFonts.openSans(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              subtitle: const Text(
-                'Get to connect with God at the Power Penetcostal Church on the go app.',
-                style: TextStyle(
-                    // fontWeight: FontWeight.bold,
-                    ),
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const HomeTodayWidget(),
-            const SizedBox(
-              height: 30,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-          ],
-        ),
       ),
     );
   }

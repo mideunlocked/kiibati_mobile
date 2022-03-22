@@ -22,54 +22,75 @@ class _AnnouncementBannerState extends State<AnnouncementBanner> {
         physics: const ClampingScrollPhysics(),
         shrinkWrap: true,
         itemBuilder: (ctx, index) {
-          return SizedBox(
-            width: MediaQuery.of(context).size.width / 1.1,
-            height: 200,
-            child: Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: InkWell(
-                  onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (builder) {
-                          return const CupertinoAlertDialog(
-                            title: Text('Test'),
-                            content: Text("Testing testing testing testing"),
-                          );
-                        });
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Stack(
-                      children: <Widget>[
-                        Image.network(
-                          ImageUrls.first,
-                          fit: BoxFit.cover,
-                          // loadingBuilder: (context, child, loadingProgress) {
-                          //   return const Center(
-                          //     child: CircularProgressIndicator(),
-                          //   );
-                          // },
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0, left: 8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              AutoSizeText(
-                                "Test",
-                                style: GoogleFonts.fredokaOne(),
-                              ),
-                              const AutoSizeText('Testing Testing'),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  )),
-            ),
+          return const AnnouncementTile(
+            body: "Announcement body",
+            title: "Announcement title",
           );
         },
+      ),
+    );
+  }
+}
+
+class AnnouncementTile extends StatelessWidget {
+  final String title;
+  final String body;
+
+  const AnnouncementTile({
+    Key? key,
+    required this.title,
+    required this.body,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 300,
+      height: 200,
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: InkWell(
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (builder) {
+                  return CupertinoAlertDialog(
+                    title: Text(title),
+                    content: Text(body),
+                  );
+                });
+          },
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              image: DecorationImage(
+                image: NetworkImage(
+                  ImageUrls.first,
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Title(
+                  color: Colors.black,
+                  child: AutoSizeText(
+                    title,
+                    style: GoogleFonts.openSans(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                AutoSizeText(
+                  body,
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

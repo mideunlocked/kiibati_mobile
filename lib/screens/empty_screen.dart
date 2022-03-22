@@ -15,7 +15,7 @@ class _EmptyScreenState extends State<EmptyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Icon(
           Icons.settings_rounded,
