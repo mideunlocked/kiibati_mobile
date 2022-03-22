@@ -12,7 +12,7 @@ class SermonListItem extends StatelessWidget {
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Image.network(
-          'https://firebasestorage.googleapis.com/v0/b/kiibati-go.appspot.com/o/HE%20ROOT%20OF%20AGONY%20AND%20OPPRESSION.jpg?alt=media&token=219385e9-f257-4d26-af52-7759cb91b02d',
+          "https://firebasestorage.googleapis.com/v0/b/kiibati-go.appspot.com/o/church%20today%2F4.png?alt=media&token=8ca23cc0-c59a-4086-9ce1-fde9127a3e47",
           fit: BoxFit.contain,
         ),
       ),

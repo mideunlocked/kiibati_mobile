@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         EmptyScreen.routeName: (ctx) => const EmptyScreen(),
         KiibatiOnlineScreen.routeName: (ctx) => const KiibatiOnlineScreen(),
         SermonVideo.routeName: (ctx) => const SermonVideo(),
+        HomePageScreen.routeName: (ctx) => const HomePageScreen(),
       },
     );
   }

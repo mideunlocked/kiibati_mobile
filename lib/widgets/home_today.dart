@@ -60,11 +60,11 @@ class HomeTodayBox extends StatelessWidget {
                 imageUrl,
                 width: double.infinity,
                 fit: BoxFit.cover,
-                loadingBuilder: (context, child, loadingProgress) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                },
+                // loadingBuilder: (context, child, loadingProgress) {
+                //   return const Center(
+                //     child: CircularProgressIndicator(),
+                //   );
+                // },
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 8.0, left: 8.0),

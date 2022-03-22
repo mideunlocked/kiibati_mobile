@@ -1,5 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AnnouncementBanner extends StatefulWidget {
   const AnnouncementBanner({Key? key}) : super(key: key);
@@ -38,14 +40,31 @@ class _AnnouncementBannerState extends State<AnnouncementBanner> {
                   },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
-                    child: Image.network(
-                      ImageUrls.first,
-                      fit: BoxFit.cover,
-                      loadingBuilder: (context, child, loadingProgress) {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      },
+                    child: Stack(
+                      children: <Widget>[
+                        Image.network(
+                          ImageUrls.first,
+                          fit: BoxFit.cover,
+                          // loadingBuilder: (context, child, loadingProgress) {
+                          //   return const Center(
+                          //     child: CircularProgressIndicator(),
+                          //   );
+                          // },
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0, left: 8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              AutoSizeText(
+                                "Test",
+                                style: GoogleFonts.fredokaOne(),
+                              ),
+                              const AutoSizeText('Testing Testing'),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   )),
             ),

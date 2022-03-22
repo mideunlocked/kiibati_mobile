@@ -15,19 +15,12 @@ class _KiibatiOnlineScreenState extends State<KiibatiOnlineScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Kiibati Online',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          ),
+      body: SafeArea(
+        child: ListView.builder(
+          itemBuilder: (ctx, index) {
+            return const SermonListItem();
+          },
         ),
-      ),
-      body: ListView.builder(
-        itemBuilder: (ctx, index) {
-          return const SermonListItem();
-        },
       ),
     );
   }
