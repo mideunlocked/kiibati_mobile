@@ -15,7 +15,6 @@ class _SermonVideoState extends State<SermonVideo> {
   VideoPlayerController? _controller;
   List kehinde = [
     'https://firebasestorage.googleapis.com/v0/b/kiibati-go.appspot.com/o/30da31d73e214e9b93e89a00e9bf86b4.mp4?alt=media&token=61f236e5-a842-4f9b-bdff-c085fbc6925c',
-    'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
   ];
 
   @override

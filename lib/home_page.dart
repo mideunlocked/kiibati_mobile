@@ -3,6 +3,7 @@ import 'package:kiibati_mobile/screens/empty_screen.dart';
 import 'package:kiibati_mobile/screens/kiibati_online_screen.dart';
 
 import 'screens/Home_screen.dart';
+import 'screens/setting_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,16 +18,13 @@ class _HomePageState extends State<HomePage> {
   static const List<Widget> _pages = [
     HomePageScreen(),
     KiibatiOnlineScreen(),
-    EmptyScreen(),
+    SettingScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.white70,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 2,
         actions: [
           IconButton(
             onPressed: () => Navigator.of(context).pushNamed('EmptyScreen'),

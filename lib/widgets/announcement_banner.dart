@@ -75,17 +75,21 @@ class AnnouncementTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Title(
-                  color: Colors.black,
+                  color: Colors.white,
                   child: AutoSizeText(
                     title,
                     style: GoogleFonts.openSans(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                 ),
                 AutoSizeText(
                   body,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),

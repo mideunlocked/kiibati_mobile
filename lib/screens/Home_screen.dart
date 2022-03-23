@@ -1,8 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kiibati_mobile/models/latest_sermon.dart';
-import 'package:kiibati_mobile/models/more_options.dart';
 
 import '../widgets/announcement_banner.dart';
 import '../widgets/home_today.dart';
@@ -17,7 +15,6 @@ class HomePageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: Column(
@@ -27,7 +24,7 @@ class HomePageScreen extends StatelessWidget {
             ListTile(
               title: AutoSizeText(
                 'Announcments',
-                style: GoogleFonts.openSans(
+                style: GoogleFonts.roboto(
                   fontSize: 25,
                   fontWeight: FontWeight.w700,
                 ),

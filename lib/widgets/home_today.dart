@@ -48,13 +48,12 @@ class HomeTodayBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.of(context).pushNamed('EmptyScreen'),
+      onTap: () => Navigator.of(context).pushNamed('HomeTodayScreen'),
       child: SizedBox(
         width: 200,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: Stack(
-            alignment: AlignmentDirectional.center,
             children: <Widget>[
               Image.network(
                 imageUrl,
@@ -67,15 +66,22 @@ class HomeTodayBox extends StatelessWidget {
                 // },
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8.0, left: 8.0),
+                padding: const EdgeInsets.only(top: 15.0, left: 15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     AutoSizeText(
                       "Test",
-                      style: GoogleFonts.fredokaOne(),
+                      style: GoogleFonts.fredokaOne(
+                        color: Colors.white,
+                      ),
                     ),
-                    const AutoSizeText('Testing Testing'),
+                    const AutoSizeText(
+                      'Testing Testing',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
                   ],
                 ),
               ),
