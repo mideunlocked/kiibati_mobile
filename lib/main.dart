@@ -1,13 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
 import 'models/sermon_video.dart';
-import 'screens/Home_screen.dart';
+import 'screens/home_screen.dart';
 import 'screens/empty_screen.dart';
 import 'screens/home_today_screens.dart';
 import 'screens/kiibati_online_screen.dart';
 import 'screens/setting_screen.dart';
+import 'screens/setting_screens/about_us_screen.dart';
+import 'screens/setting_screens/change_password.dart';
+import 'screens/setting_screens/edit_profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'Kiibati',
       theme: ThemeData(
           primarySwatch: Colors.indigo,
+          primaryColor: Colors.indigo,
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ButtonStyle(
               elevation: MaterialStateProperty.all(1),
@@ -48,6 +51,9 @@ class MyApp extends StatelessWidget {
         HomePageScreen.routeName: (ctx) => const HomePageScreen(),
         HomeTodayScreen.routeName: (ctx) => const HomeTodayScreen(),
         SettingScreen.routeName: (ctx) => const SettingScreen(),
+        EditProfile.routeName: (ctx) => const EditProfile(),
+        ChangePassword.routeName: (ctx) => const ChangePassword(),
+        AboutUsScreen.routeName: (ctx) => const AboutUsScreen(),
       },
     );
   }

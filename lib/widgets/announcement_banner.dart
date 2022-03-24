@@ -23,8 +23,9 @@ class _AnnouncementBannerState extends State<AnnouncementBanner> {
         shrinkWrap: true,
         itemBuilder: (ctx, index) {
           return const AnnouncementTile(
-            body: "Announcement body",
-            title: "Announcement title",
+            body:
+                "This Friday 25th of March is our monthly night of God's throne",
+            title: "Night of God's Throne",
           );
         },
       ),

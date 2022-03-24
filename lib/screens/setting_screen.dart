@@ -15,6 +15,7 @@ class SettingScreen extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               AutoSizeText(
                 "Settings",
@@ -30,21 +31,34 @@ class SettingScreen extends StatelessWidget {
                 title: "Account",
                 icon: Icons.person_outline_rounded,
               ),
-              const SettingScreenButton(
-                title: "Edit profile",
+              InkWell(
+                onTap: () => Navigator.of(context).pushNamed('EditProfile'),
+                borderRadius: BorderRadius.circular(15),
+                child: const SettingScreenButton(
+                  title: "Edit profile",
+                ),
               ),
-              const SettingScreenButton(
-                title: "Cange password",
+              InkWell(
+                onTap: () => Navigator.of(context).pushNamed('ChangePassword'),
+                borderRadius: BorderRadius.circular(15),
+                child: const SettingScreenButton(
+                  title: "Change password",
+                ),
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               const SettingTitleWidget(
                 title: "More",
                 icon: Icons.assistant_navigation,
               ),
-              const SettingScreenButton(
-                title: "About us",
+              InkWell(
+                onTap: () => Navigator.of(context).pushNamed("AboutUsScreen"),
+                borderRadius: BorderRadius.circular(15),
+                splashColor: Theme.of(context).primaryColor,
+                child: const SettingScreenButton(
+                  title: "About us",
+                ),
               ),
               const SettingScreenButton(
                 title: "Rate us",
@@ -100,23 +114,32 @@ class SettingScreenButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Row(
-        children: <Widget>[
-          AutoSizeText(
-            title,
-            style: const TextStyle(
-              color: Colors.black,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        height: 50,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.grey[100],
+        ),
+        child: Row(
+          children: <Widget>[
+            AutoSizeText(
+              title,
+              style: const TextStyle(
+                color: Colors.black,
+              ),
             ),
-          ),
-          const Spacer(),
-          const Icon(
-            Icons.arrow_forward_ios_rounded,
-            color: Colors.black,
-            size: 15,
-          ),
-        ],
+            const Spacer(),
+            const Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: Colors.black,
+              size: 15,
+            ),
+          ],
+        ),
       ),
     );
   }

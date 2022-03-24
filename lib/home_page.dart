@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kiibati_mobile/screens/empty_screen.dart';
 import 'package:kiibati_mobile/screens/kiibati_online_screen.dart';
 
-import 'screens/Home_screen.dart';
+import 'screens/home_screen.dart';
 import 'screens/setting_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         actions: [
           IconButton(
-            onPressed: () => Navigator.of(context).pushNamed('EmptyScreen'),
+            onPressed: () => Navigator.of(context).pushNamed('EditProfile'),
             icon: const Icon(
               Icons.account_circle_rounded,
               color: Colors.black,
