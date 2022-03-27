@@ -12,8 +12,7 @@ class HomeTodayWidget extends StatefulWidget {
 class _HomeTodayidgetState extends State<HomeTodayWidget> {
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: imageUrl.length,
+    return GridView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
@@ -22,13 +21,44 @@ class _HomeTodayidgetState extends State<HomeTodayWidget> {
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
       ),
-      itemBuilder: (ctx, index) {
-        return HomeTodayBox(
-          imageUrl: imageUrl[index],
-          title: "Testing",
-          extra: "Testing testing",
-        );
-      },
+      children: [
+        HomeTodayBox(
+          imageUrl: imageUrl.elementAt(5),
+          title: "This weeks highlights",
+          extra: "Last week of March",
+          pushNamed: "HomeTodayScreen",
+        ),
+        HomeTodayBox(
+          imageUrl: imageUrl.first,
+          title: "Watch the latest service",
+          extra: "27th March, 2022",
+          pushNamed: "SermonVideo",
+        ),
+        HomeTodayBox(
+          imageUrl: imageUrl.elementAt(1),
+          title: "Listen to the latetst service",
+          extra: "28th March, 2022",
+          pushNamed: "HomeTodayScreen",
+        ),
+        HomeTodayBox(
+          imageUrl: imageUrl.elementAt(2),
+          title: "Bible Study Outline",
+          extra: "28th March, 2022",
+          pushNamed: "KiibatiOutline",
+        ),
+        HomeTodayBox(
+          imageUrl: imageUrl.elementAt(3),
+          title: "Prayers",
+          extra: "Variety of prayers prepared for you",
+          pushNamed: "HomeTodayScreen",
+        ),
+        HomeTodayBox(
+          imageUrl: imageUrl.elementAt(4),
+          title: "Bible Study Outline",
+          extra: "28th March, 2022",
+          pushNamed: "HomeTodayScreen",
+        ),
+      ],
     );
   }
 }
@@ -37,18 +67,22 @@ class HomeTodayBox extends StatelessWidget {
   final String imageUrl;
   final String title;
   final String extra;
+  final String pushNamed;
 
   const HomeTodayBox({
     Key? key,
     required this.imageUrl,
     required this.title,
     required this.extra,
+    required this.pushNamed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.of(context).pushNamed('HomeTodayScreen'),
+      onTap: () => Navigator.of(context).pushNamed(pushNamed, arguments: {
+        "Argument": title,
+      }),
       child: SizedBox(
         width: 200,
         child: ClipRRect(
@@ -59,26 +93,28 @@ class HomeTodayBox extends StatelessWidget {
                 imageUrl,
                 width: double.infinity,
                 fit: BoxFit.cover,
-                // loadingBuilder: (context, child, loadingProgress) {
-                //   return const Center(
-                //     child: CircularProgressIndicator(),
-                //   );
-                // },
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15.0, left: 15.0),
+                padding: const EdgeInsets.only(
+                  top: 15.0,
+                  left: 15.0,
+                  right: 5,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     AutoSizeText(
-                      "Test",
+                      title,
                       style: GoogleFonts.fredokaOne(
                         color: Colors.white,
                       ),
                     ),
-                    const AutoSizeText(
-                      'Testing Testing',
-                      style: TextStyle(
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    AutoSizeText(
+                      extra,
+                      style: const TextStyle(
                         color: Colors.white,
                       ),
                     ),

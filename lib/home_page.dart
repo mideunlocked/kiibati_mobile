@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kiibati_mobile/screens/kiibati_online_screen.dart';
+import 'package:kiibati_mobile/screens/tabs_screen/kiibati_online_screen.dart';
 
 import 'screens/home_screen.dart';
 import 'screens/setting_screen.dart';

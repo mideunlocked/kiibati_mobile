@@ -10,7 +10,7 @@ class HomeTodayScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: const Center(
-        child: Text("To be integrated"),
+        child: Text("To be integraed"),
       ),
     );
   }

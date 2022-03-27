@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '/models/sermon_list_item.dart';
 import 'kiibati_audio.dart';
+import 'kiibati_audio.dart';
+import 'kiibati_outline_screen.dart';
 
 class KiibatiOnlineScreen extends StatefulWidget {
   static const routeName = 'KiibatiOnlineScreen';
@@ -16,7 +18,7 @@ class _KiibatiOnlineScreenState extends State<KiibatiOnlineScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 0,
@@ -29,6 +31,9 @@ class _KiibatiOnlineScreenState extends State<KiibatiOnlineScreen> {
               ),
               Tab(
                 text: "Audio",
+              ),
+              Tab(
+                text: "Outlines",
               )
             ],
           ),
@@ -38,6 +43,7 @@ class _KiibatiOnlineScreenState extends State<KiibatiOnlineScreen> {
             children: <Widget>[
               KibatiiOnlineVideoScreen(),
               KibatiiOnlineAudioScreen(),
+              KiibatiOutline(),
             ],
           ),
         ),

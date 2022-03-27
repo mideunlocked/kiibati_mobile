@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:kiibati_mobile/screens/tabs_screen/kiibati_outline_screen.dart';
 
 import 'home_page.dart';
 import 'models/sermon_video.dart';
 import 'screens/home_screen.dart';
 import 'screens/empty_screen.dart';
 import 'screens/home_today_screens.dart';
-import 'screens/kiibati_online_screen.dart';
+import 'screens/tabs_screen/kiibati_online_screen.dart';
 import 'screens/setting_screen.dart';
 import 'screens/setting_screens/about_us_screen.dart';
 import 'screens/setting_screens/change_password.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         EditProfile.routeName: (ctx) => const EditProfile(),
         ChangePassword.routeName: (ctx) => const ChangePassword(),
         AboutUsScreen.routeName: (ctx) => const AboutUsScreen(),
+        KiibatiOutline.routeName: (ctx) => const KiibatiOutline(),
       },
     );
   }

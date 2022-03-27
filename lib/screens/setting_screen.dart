@@ -45,6 +45,9 @@ class SettingScreen extends StatelessWidget {
                   title: "Change password",
                 ),
               ),
+              const SettingScreenButton(
+                title: "Pay offerring",
+              ),
               const SizedBox(
                 height: 30,
               ),
